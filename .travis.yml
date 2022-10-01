@@ -9,6 +9,10 @@ before_install:
 script: 
   - docker run buildntest yarn test
 
+after_success: 
+  - docker build -t mainbuild .
+  - docker run mainbuild
+
 deploy:
   provider: elasticbeanstalk
   region: 'us-east-1'
