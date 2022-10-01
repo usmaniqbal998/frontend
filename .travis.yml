@@ -10,8 +10,6 @@ before_install:
 script: 
   - docker run -e CI=true buildntest yarn test
 
-
-  
 deploy:
   provider: elasticbeanstalk
   region: 'us-east-1'
